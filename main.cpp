@@ -2,7 +2,7 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), "JOPA", sf::Style::Close );
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
@@ -14,7 +14,18 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
+        //Update input
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+            shape.move(1, 0);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+            shape.move(-1, 0);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+            shape.move(0, 1);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+            shape.move(0, -1);
+        //Update state
 
+        //Render
         window.clear();
         window.draw(shape);
         window.display();
