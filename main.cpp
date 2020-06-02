@@ -1,11 +1,14 @@
-#include <SFML/Graphics.hpp>
+//#include <SFML/Graphics.hpp>
+#include "stdHeader.h"
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1920, 1080), "JOPA", sf::Style::Close );
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-
+    sf::RenderWindow window(sf::VideoMode(1000, 1000), "Tic Tac Toe", sf::Style::Close );
+    window.setFramerateLimit(120);
+    sf::Sprite background;
+    sf::Texture backgroundTexture;
+    backgroundTexture.loadFromFile("images/background.jpg");
+    background.setTexture(backgroundTexture);
     while (window.isOpen())
     {
         sf::Event event;
@@ -15,19 +18,12 @@ int main()
                 window.close();
         }
         //Update input
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-            shape.move(1, 0);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-            shape.move(-1, 0);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-            shape.move(0, 1);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-            shape.move(0, -1);
+        
         //Update state
 
         //Render
         window.clear();
-        window.draw(shape);
+        window.draw(background);
         window.display();
     }
 
