@@ -1,5 +1,9 @@
 #pragma once
-class game
+#include <SFML/Graphics.hpp>
+
+class Game
 {
+public: 
+	void play();
 };
 

@@ -1,5 +1,7 @@
 #pragma once
-class player
+class Player
 {
+public:
+	virtual void make_turn() = 0;
 };
 

@@ -1,5 +1,7 @@
 #pragma once
-class field
+#include <SFML/Graphics.hpp>
+
+class Field
 {
 };
 
