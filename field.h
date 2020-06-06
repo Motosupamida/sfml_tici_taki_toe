@@ -3,5 +3,10 @@
 
 class Field
 {
+private:
+	char sessionField[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
+public:
+	void newGame();
+	char gameState();
 };
 

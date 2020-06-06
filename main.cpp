@@ -1,10 +1,12 @@
-#include "field.h"
-#include "game.h"
-#include "player.h"
+#include <iostream>
+
+#include "Field.h"
+#include "Game.h"
+#include "Player.h"
 
 int main()
 {
-    Game *Session = new Game;
-    Session->play();
+    Game session;
+    session.play();
     return 0;
 }
