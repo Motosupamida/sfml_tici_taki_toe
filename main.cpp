@@ -6,8 +6,10 @@
 
 int main()
 {
-    Game *session = new Game;
+    Game *session = new Game();
+
     session->play();
+
     delete session;
     return 0;
 }
