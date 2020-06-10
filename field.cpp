@@ -1,14 +1,24 @@
 #include "Field.h"
 
-void Field::newGame()
+
+Field::Field()
 {
+	short* sessionField = new short[9];
 	for (short i = 0; i < 9; i++)
 	{
 		sessionField[i] = ' ';
 	}
 }
 
-char Field::gameState()
+Field::~Field()
+{
+	for (short i = 0; i < 9; i++)
+	{
+		delete sessionField;
+	}
+}
+
+char Field::checkFieldState()
 {
 	char winCh = 'x';
 	for (short i = 0; i < 2; i++)
@@ -24,10 +34,14 @@ char Field::gameState()
 	}
 	for (short i = 0; i < 9; i++)
 	{
-		if (sessionField[i] = ' ')
+		if (sessionField[i] == ' ')
 			return 'n';//game continues
 	}
-	return 'd'; //draw
+	return 'd'; //standoff
 }
 
+char Field::getCellState(short cell)
+{
+	return sessionField[cell];
+}
 

@@ -6,7 +6,9 @@ class Field
 private:
 	char sessionField[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 public:
-	void newGame();
-	char gameState();
+	Field();
+	~Field();
+	char checkFieldState();
+	char getCellState(short cell);
 };
 
