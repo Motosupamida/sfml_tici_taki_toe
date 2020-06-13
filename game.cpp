@@ -1,14 +1,14 @@
 #include "Game.h"
 
 Game::Game() 
-    : m_window{ new sf::RenderWindow(sf::VideoMode(800, 800), "Tic Tac Toe", sf::Style::Close) }
+    : m_window{ new sf::RenderWindow(sf::VideoMode(900, 900), "Tic Tac Toe", sf::Style::Close) }
 {
     m_window->setFramerateLimit(120);
 
     initTexture();
 
-    //m_background.setTexture(m_textures["BACKGROUND"]);
-    //m_background.setSize(static_cast<sf::Vector2f>(m_window->getSize()));
+    m_background.setTexture(m_textures["BACKGROUND"]);
+    m_background.setSize(static_cast<sf::Vector2f>(m_window->getSize()));
 }
 
 Game::~Game()
